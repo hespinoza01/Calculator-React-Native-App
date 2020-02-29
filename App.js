@@ -1,18 +1,20 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { Component } from 'react';
+import { View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-    </View>
-  );
+import NumberKeys from './components/NumberKeys';
+
+import Styles from './Styles';
+
+export default class App extends Component {
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    return (
+      <View style={Styles.containerGrid}>
+        <NumberKeys/>
+      </View>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
