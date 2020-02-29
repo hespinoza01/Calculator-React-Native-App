@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import rId from '../Utils/RandomId';
 
 import Styles from '../Styles';
 
@@ -14,11 +15,11 @@ const NumberKeys = () => (
     <View style={Styles.containerGrid}>
         {
             numbers.map(row => (
-                <View style={Styles.containerRow}>
+                <View key={rId()} style={Styles.containerRow}>
                     {
                         row.map(item => (
                             <Text 
-                                key={item} 
+                                key={rId()} 
                                 style={Styles.numberButton}>
                                 {
                                     item
