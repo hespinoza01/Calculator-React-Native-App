@@ -11,7 +11,7 @@ const numbers = [
     ['(-)', 0, '.']
 ];
 
-const NumberKeys = () => (
+const NumberKeys = (props) => (
     <View style={Styles.containerGrid}>
         {
             numbers.map(row => (
@@ -20,7 +20,8 @@ const NumberKeys = () => (
                         row.map(item => (
                             <Text 
                                 key={rId()} 
-                                style={Styles.numberButton}>
+                                style={Styles.numberButton}
+                                onPress={()  => props.onPressKey(item)}>
                                 {
                                     item
                                 }
